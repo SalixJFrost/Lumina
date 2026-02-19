@@ -307,3 +307,129 @@ A: 目前不支持，但主题设置会自动保存在浏览器中。
 ---
 
 **享受多样化的阅读体验！** 🎨✨
+
+---
+
+## 🎨 主题配色参考
+
+### 快速查看所有主题的配色方案
+
+#### 📄 Medium 经典
+```css
+--bg: #ffffff
+--text: rgba(41, 41, 41, 1)
+--text-secondary: rgba(117, 117, 117, 1)
+--border: rgba(230, 230, 230, 1)
+--accent: #1a8917
+```
+
+#### 🌿 护眼纸张
+```css
+--bg: #F5F1E8
+--text: #2E2E2E
+--text-secondary: #6B6B6B
+--border: rgba(46, 46, 46, 0.1)
+--accent: #8B7355
+```
+
+#### 🌙 深夜模式
+```css
+--bg: #121212
+--text: rgba(255, 255, 255, 0.92)
+--text-secondary: rgba(255, 255, 255, 0.54)
+--border: rgba(255, 255, 255, 0.15)
+--accent: #5cb85c
+```
+
+#### 🌊 柔和渐变
+```css
+--bg: #ffffff
+--text: #2E2E2E
+--text-secondary: #6B6B6B
+--border: rgba(46, 46, 46, 0.1)
+--accent: #7B68EE
+background: radial-gradient(circle at 30% 30%, #f3e7ff, #ffffff)
+```
+
+#### 📖 Kindle 风格
+```css
+--bg: #FBF8F1
+--text: #3C3C3C
+--text-secondary: #7A7A7A
+--border: rgba(60, 60, 60, 0.1)
+--accent: #A0826D
+```
+
+#### 🍎 Apple Books
+```css
+--bg: #FAFAFA
+--text: #1D1D1F
+--text-secondary: #86868B
+--border: rgba(0, 0, 0, 0.08)
+--accent: #007AFF
+```
+
+#### 🌸 微信读书
+```css
+--bg: #F6F1E7
+--text: #333333
+--text-secondary: #999999
+--border: rgba(51, 51, 51, 0.1)
+--accent: #FF6B35
+```
+
+#### 🌌 深空模式
+```css
+--bg: #0A0E27
+--text: #E8E8E8
+--text-secondary: #A0A0A0
+--border: rgba(232, 232, 232, 0.1)
+--accent: #64B5F6
+background: linear-gradient(135deg, #0A0E27 0%, #1A1F3A 100%)
+```
+
+#### 🌅 暖阳模式
+```css
+--bg: #FFF9F0
+--text: #4A4A4A
+--text-secondary: #8A8A8A
+--border: rgba(74, 74, 74, 0.1)
+--accent: #FF8C42
+background: linear-gradient(180deg, #FFF9F0 0%, #FFE8D6 100%)
+```
+
+---
+
+## 🛠️ 自定义主题
+
+想要创建自己的主题？编辑 `assets/css/style.css` 文件：
+
+```css
+/* 你的自定义主题 */
+body.theme-custom {
+    --bg: #你的背景色;
+    --text: #你的文字色;
+    --text-secondary: #你的次要文字色;
+    --border: #你的边框色;
+    --card-hover: #你的悬停色;
+    --accent: #你的强调色;
+    --accent-hover: #你的强调悬停色;
+}
+```
+
+然后在 `assets/js/script.js` 中添加主题选项：
+
+```javascript
+const themes = {
+    // ... 其他主题
+    custom: { name: '我的主题', icon: '✨' }
+};
+```
+
+最后在 `index.html` 中添加选项：
+
+```html
+<div class="theme-option" data-theme="custom">
+    <span>✨</span> 我的主题
+</div>
+```

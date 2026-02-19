@@ -83,21 +83,17 @@ Lumina/
 ├── index.html                 # 主页面
 ├── assets/
 │   ├── css/
-│   │   └── style.css         # 样式文件
+│   │   └── style.css         # 样式文件（9种主题）
 │   └── js/
-│       ├── script.js         # 主要逻辑
+│       ├── script.js         # 主逻辑
 │       └── Readability.js    # Mozilla Readability 库
 ├── docs/                      # 文档目录
-│   ├── README.md             # 详细文档
 │   ├── QUICKSTART.md         # 快速开始
 │   ├── THEMES.md             # 主题指南
 │   ├── FEATURES.md           # 功能特性
-│   ├── DEPLOY.md             # 部署指南
-│   └── ...
-├── .github/
-│   └── workflows/
-│       └── deploy.yml        # GitHub Actions
+│   └── DEPLOY.md             # 部署指南
 ├── package.json              # 项目配置
+├── CHANGELOG.md              # 更新日志
 └── LICENSE                   # MIT 许可证
 ```
 
