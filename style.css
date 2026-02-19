@@ -1,0 +1,823 @@
+/* Medium-inspired Design System with Multiple Reading Themes */
+:root {
+    /* Default Theme - Medium Style */
+    --bg: #ffffff;
+    --text: rgba(41, 41, 41, 1);
+    --text-secondary: rgba(117, 117, 117, 1);
+    --border: rgba(230, 230, 230, 1);
+    --card-hover: rgba(0, 0, 0, 0.05);
+    --accent: #1a8917;
+    --accent-hover: #156d13;
+    
+    /* Typography */
+    --font-serif: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --font-mono: Menlo, Monaco, "Courier New", monospace;
+}
+
+/* 🌿 护眼纸张风格 - Paper Theme */
+body.theme-paper {
+    --bg: #F5F1E8;
+    --text: #2E2E2E;
+    --text-secondary: #6B6B6B;
+    --border: rgba(46, 46, 46, 0.1);
+    --card-hover: rgba(46, 46, 46, 0.05);
+    --accent: #8B7355;
+    --accent-hover: #6F5D47;
+}
+
+/* 🌙 深夜阅读模式 - Dark Theme */
+body.theme-dark {
+    --bg: #121212;
+    --text: rgba(255, 255, 255, 0.92);
+    --text-secondary: rgba(255, 255, 255, 0.54);
+    --border: rgba(255, 255, 255, 0.15);
+    --card-hover: rgba(255, 255, 255, 0.05);
+    --accent: #5cb85c;
+    --accent-hover: #4cae4c;
+}
+
+/* 🌊 柔和渐变背景 - Gradient Theme */
+body.theme-gradient {
+    --bg: #ffffff;
+    --text: #2E2E2E;
+    --text-secondary: #6B6B6B;
+    --border: rgba(46, 46, 46, 0.1);
+    --card-hover: rgba(46, 46, 46, 0.05);
+    --accent: #7B68EE;
+    --accent-hover: #6A5ACD;
+    background: radial-gradient(circle at 30% 30%, #f3e7ff, #ffffff);
+    background-attachment: fixed;
+}
+
+/* 📖 经典书籍风格 - Kindle Theme */
+body.theme-kindle {
+    --bg: #FBF8F1;
+    --text: #3C3C3C;
+    --text-secondary: #7A7A7A;
+    --border: rgba(60, 60, 60, 0.1);
+    --card-hover: rgba(60, 60, 60, 0.05);
+    --accent: #A0826D;
+    --accent-hover: #8B6F5C;
+}
+
+/* 🍎 Apple Books 风格 - Apple Theme */
+body.theme-apple {
+    --bg: #FAFAFA;
+    --text: #1D1D1F;
+    --text-secondary: #86868B;
+    --border: rgba(0, 0, 0, 0.08);
+    --card-hover: rgba(0, 0, 0, 0.04);
+    --accent: #007AFF;
+    --accent-hover: #0051D5;
+}
+
+/* 🌸 微信读书风格 - WeChat Theme */
+body.theme-wechat {
+    --bg: #F6F1E7;
+    --text: #333333;
+    --text-secondary: #999999;
+    --border: rgba(51, 51, 51, 0.1);
+    --card-hover: rgba(51, 51, 51, 0.05);
+    --accent: #FF6B35;
+    --accent-hover: #E55A2B;
+}
+
+/* 🌌 深空模式 - Space Theme */
+body.theme-space {
+    --bg: #0A0E27;
+    --text: #E8E8E8;
+    --text-secondary: #A0A0A0;
+    --border: rgba(232, 232, 232, 0.1);
+    --card-hover: rgba(232, 232, 232, 0.05);
+    --accent: #64B5F6;
+    --accent-hover: #42A5F5;
+    background: linear-gradient(135deg, #0A0E27 0%, #1A1F3A 100%);
+    background-attachment: fixed;
+}
+
+/* 🌅 暖阳模式 - Sunset Theme */
+body.theme-sunset {
+    --bg: #FFF9F0;
+    --text: #4A4A4A;
+    --text-secondary: #8A8A8A;
+    --border: rgba(74, 74, 74, 0.1);
+    --card-hover: rgba(74, 74, 74, 0.05);
+    --accent: #FF8C42;
+    --accent-hover: #E67A32;
+    background: linear-gradient(180deg, #FFF9F0 0%, #FFE8D6 100%);
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.5s ease, color 0.3s ease;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 主题切换动画 */
+body * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Header - Medium Style */
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease;
+}
+
+body.theme-dark .navbar,
+body.theme-space .navbar {
+    background: rgba(18, 18, 18, 0.95);
+}
+
+body.theme-paper .navbar {
+    background: rgba(245, 241, 232, 0.95);
+}
+
+body.theme-kindle .navbar {
+    background: rgba(251, 248, 241, 0.95);
+}
+
+body.theme-apple .navbar {
+    background: rgba(250, 250, 250, 0.95);
+}
+
+body.theme-wechat .navbar {
+    background: rgba(246, 241, 231, 0.95);
+}
+
+body.theme-gradient .navbar,
+body.theme-sunset .navbar {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 8px;
+}
+
+.navbar nav button {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.navbar nav button:hover {
+    background: var(--card-hover);
+    color: var(--text);
+}
+
+.navbar nav button.active {
+    background: var(--accent);
+    color: white;
+}
+
+#themeToggle {
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background 0.2s ease;
+    position: relative;
+}
+
+#themeToggle:hover {
+    background: var(--card-hover);
+}
+
+/* Theme Selector Dropdown */
+.theme-selector {
+    position: fixed;
+    top: 70px;
+    right: 24px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.theme-selector.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.theme-selector h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    margin: 4px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.theme-option:hover {
+    background: var(--card-hover);
+}
+
+.theme-option.active {
+    background: var(--accent);
+    color: white;
+}
+
+.theme-option span {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Main Content Area - Golden Ratio */
+#app {
+    max-width: 680px;  /* 黄金阅读宽度 */
+    margin: 60px auto;
+    padding: 0 24px;
+    min-height: calc(100vh - 200px);
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+/* Card - Medium Article Style */
+.card {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    background: var(--card-hover);
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    border-radius: 4px;
+}
+
+/* 特殊主题的卡片效果 */
+body.theme-gradient .card:hover,
+body.theme-sunset .card:hover {
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.theme-space .card:hover {
+    background: rgba(100, 181, 246, 0.1);
+    box-shadow: 0 2px 8px rgba(100, 181, 246, 0.2);
+}
+
+body.theme-apple .card:hover {
+    background: rgba(0, 122, 255, 0.05);
+}
+
+.card strong {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text);
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--font-serif);
+}
+
+.card small {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Form Elements */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+/* Buttons */
+button {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    border-radius: 24px;
+}
+
+.controls button:hover {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+}
+
+/* Reader Mode - Readability Style with Golden Ratio */
+.reader {
+    font-family: var(--font-serif);
+    font-size: 21px;  /* 最佳阅读字号 */
+    line-height: 1.8;  /* 黄金行距 */
+    color: var(--text);
+    margin-top: 40px;
+    word-wrap: break-word;
+    letter-spacing: -0.003em;
+}
+
+/* 不同主题的阅读器优化 */
+body.theme-paper .reader,
+body.theme-kindle .reader {
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+body.theme-dark .reader,
+body.theme-space .reader {
+    font-size: 21px;
+    line-height: 1.85;
+    letter-spacing: 0.01em;
+}
+
+body.theme-apple .reader {
+    font-size: 19px;
+    line-height: 1.75;
+    letter-spacing: -0.01em;
+}
+
+.reader h1,
+.reader h2,
+.reader h3 {
+    font-family: var(--font-serif);
+    margin-top: 48px;
+    margin-bottom: 16px;
+}
+
+.reader h2 {
+    font-size: 34px;
+    line-height: 1.15;
+}
+
+.reader p {
+    margin-bottom: 32px;
+    letter-spacing: -0.003em;
+}
+
+.reader a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+}
+
+.reader a:hover {
+    border-bottom-width: 2px;
+}
+
+.reader img {
+    max-width: 100%;
+    height: auto;
+    margin: 32px 0;
+    border-radius: 4px;
+}
+
+.reader blockquote {
+    border-left: 3px solid var(--text);
+    padding-left: 24px;
+    margin: 32px 0;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.reader code {
+    font-family: var(--font-mono);
+    background: var(--card-hover);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.reader pre {
+    background: var(--card-hover);
+    padding: 16px;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 24px 0;
+}
+
+.reader pre code {
+    background: none;
+    padding: 0;
+}
+
+/* 主题特定的阅读器优化 */
+body.theme-paper .reader,
+body.theme-kindle .reader,
+body.theme-wechat .reader {
+    text-shadow: 0 0 0.5px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-space .reader {
+    text-shadow: 0 0 1px rgba(232, 232, 232, 0.3);
+}
+
+body.theme-gradient .reader,
+body.theme-sunset .reader {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+body.theme-space .reader {
+    background: rgba(26, 31, 58, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 4px 16px rgba(100, 181, 246, 0.1);
+}
+
+/* Progress Bar */
+#progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--accent);
+    width: 0%;
+    z-index: 2000;
+    transition: width 0.1s ease;
+}
+
+/* Daily Quote - Medium Style */
+.daily-quote {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    max-width: 320px;
+    padding: 20px 24px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    font-size: 15px;
+    font-style: italic;
+    font-family: var(--font-serif);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+}
+
+/* 不同主题的名言样式 */
+body.theme-gradient .daily-quote,
+body.theme-sunset .daily-quote {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+body.theme-space .daily-quote {
+    background: rgba(26, 31, 58, 0.9);
+    backdrop-filter: blur(10px);
+    border-color: rgba(232, 232, 232, 0.2);
+}
+
+body.theme-dark .daily-quote {
+    background: rgba(30, 30, 30, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.daily-quote:hover {
+    opacity: 1;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.daily-quote small {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    font-style: normal;
+    color: var(--text-secondary);
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+/* Book Cover */
+.book-cover {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-right: 16px;
+    float: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Source Tabs */
+.source-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+}
+
+.source-tabs button {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.source-tabs button:hover {
+    background: var(--card-hover);
+    color: var(--text);
+}
+
+.source-tabs button.active {
+    background: var(--accent);
+    color: white;
+}
+
+/* Loading State */
+.loading {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+.loading::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* Error State */
+.error {
+    color: #c0392b;
+    padding: 20px 24px;
+    background: rgba(192, 57, 43, 0.08);
+    border-left: 3px solid #c0392b;
+    border-radius: 4px;
+    margin: 24px 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+body.dark .error {
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+}
+
+/* Search Results */
+#results,
+#newsList,
+#articleList {
+    margin-top: 24px;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--text-secondary);
+}
+
+.empty-state svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+    opacity: 0.3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 16px 20px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .navbar nav button {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    #app {
+        max-width: 100%;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+    
+    .reader {
+        font-size: 19px;
+        line-height: 1.6;
+    }
+    
+    .reader h2 {
+        font-size: 28px;
+    }
+    
+    .daily-quote {
+        display: none;
+    }
+    
+    .book-cover {
+        width: 80px;
+        height: 120px;
+    }
+    
+    .card strong {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 16px;
+    }
+    
+    .navbar nav {
+        gap: 4px;
+    }
+    
+    .navbar nav button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    #app {
+        margin: 24px auto;
+        padding: 0 16px;
+    }
+    
+    .controls {
+        gap: 8px;
+    }
+    
+    .controls button {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .controls,
+    .daily-quote,
+    .toast,
+    #progressBar {
+        display: none;
+    }
+    
+    #app {
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .reader {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+}

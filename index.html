@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PureReader - 在线阅读器</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">PureReader</div>
+        <nav>
+            <button data-view="books">📚 书籍</button>
+            <button data-view="news">📰 新闻</button>
+            <button data-view="knowledge">📖 知识</button>
+            <button data-view="web">🌐 网页</button>
+            <button data-view="local">📂 本地</button>
+        </nav>
+        <button id="themeToggle">🎨</button>
+    </header>
+
+    <div id="themeSelector" class="theme-selector">
+        <h4>选择阅读主题</h4>
+        <div class="theme-option" data-theme="default">
+            <span>📄</span> Medium 经典
+        </div>
+        <div class="theme-option" data-theme="paper">
+            <span>🌿</span> 护眼纸张
+        </div>
+        <div class="theme-option" data-theme="dark">
+            <span>🌙</span> 深夜模式
+        </div>
+        <div class="theme-option" data-theme="kindle">
+            <span>📖</span> Kindle 风格
+        </div>
+        <div class="theme-option" data-theme="apple">
+            <span>🍎</span> Apple Books
+        </div>
+        <div class="theme-option" data-theme="wechat">
+            <span>🌸</span> 微信读书
+        </div>
+        <div class="theme-option" data-theme="gradient">
+            <span>🌊</span> 柔和渐变
+        </div>
+        <div class="theme-option" data-theme="space">
+            <span>🌌</span> 深空模式
+        </div>
+        <div class="theme-option" data-theme="sunset">
+            <span>🌅</span> 暖阳模式
+        </div>
+    </div>
+
+    <main id="app"></main>
+
+    <div id="quote" class="daily-quote"></div>
+    <div id="progressBar"></div>
+    <div id="toast" class="toast"></div>
+
+    <script src="Readability.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

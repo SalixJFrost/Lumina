@@ -1,0 +1,27 @@
+{
+  "name": "purereader",
+  "version": "1.0.0",
+  "description": "纯前端在线阅读器 - Medium 风格 + Readability 技术",
+  "main": "script.js",
+  "scripts": {
+    "start": "npx serve",
+    "dev": "npx serve -l 8000",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "reader",
+    "readability",
+    "medium",
+    "ebook",
+    "news",
+    "rss",
+    "frontend"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "jsdom": "^28.1.0"
+  }
+}
