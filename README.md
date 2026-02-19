@@ -1,8 +1,8 @@
-# 🌟 Lumina - 纯前端多主题在线阅读器
+# 🌟 Lumina Reader
 
 <div align="center">
 
-![Lumina Logo](https://img.shields.io/badge/Lumina-PureReader-1a8917?style=for-the-badge)
+![Lumina Reader](https://img.shields.io/badge/Lumina-Reader-1a8917?style=for-the-badge)
 [![GitHub Pages](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://salixjfrost.github.io/Lumina/)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
 
@@ -10,7 +10,7 @@
 
 集成 Mozilla Readability 技术 | 9 种精美主题 | 多源内容聚合
 
-[在线体验](https://salixjfrost.github.io/Lumina/) · [快速开始](QUICKSTART.md) · [主题指南](THEMES.md) · [功能特性](FEATURES.md)
+[在线体验](https://salixjfrost.github.io/Lumina/) · [快速开始](docs/QUICKSTART.md) · [主题指南](docs/THEMES.md) · [功能特性](docs/FEATURES.md)
 
 </div>
 
@@ -53,12 +53,20 @@
 ## 🚀 快速开始
 
 ### 在线体验
-👉 **[立即访问 Lumina](https://salixjfrost.github.io/Lumina/)**
+👉 **[立即访问 Lumina Reader](https://salixjfrost.github.io/Lumina/)**
 
 ### 本地运行
-1. 克隆或下载本项目
-2. 在浏览器中打开 `index.html`
-3. 开始阅读！
+```bash
+# 克隆项目
+git clone https://github.com/SalixJFrost/Lumina.git
+
+# 进入目录
+cd Lumina
+
+# 在浏览器中打开 index.html
+# 或使用本地服务器
+python -m http.server 8000
+```
 
 ### 部署到 GitHub Pages
 1. Fork 本项目
@@ -66,53 +74,37 @@
 3. 选择 `main` 分支作为源
 4. 访问 `https://your-username.github.io/Lumina`
 
-详见 [部署指南](DEPLOY.md)
+详见 [部署指南](docs/DEPLOY.md)
 
 ## 📦 项目结构
 
 ```
-PureReader/
-├── index.html              # 主页面
-├── style.css               # Medium 风格样式
-├── script.js               # 主要逻辑
-├── Readability.js          # Mozilla 官方 Readability 库
-├── package.json            # 依赖配置
-├── README.md               # 说明文档
-└── QUICKSTART.md           # 快速启动指南
+Lumina/
+├── index.html                 # 主页面
+├── assets/
+│   ├── css/
+│   │   └── style.css         # 样式文件
+│   └── js/
+│       ├── script.js         # 主要逻辑
+│       └── Readability.js    # Mozilla Readability 库
+├── docs/                      # 文档目录
+│   ├── README.md             # 详细文档
+│   ├── QUICKSTART.md         # 快速开始
+│   ├── THEMES.md             # 主题指南
+│   ├── FEATURES.md           # 功能特性
+│   ├── DEPLOY.md             # 部署指南
+│   └── ...
+├── .github/
+│   └── workflows/
+│       └── deploy.yml        # GitHub Actions
+├── package.json              # 项目配置
+└── LICENSE                   # MIT 许可证
 ```
 
-## 🔧 技术栈
+## 🎨 主题展示
 
-- **纯前端** - HTML + CSS + JavaScript
-- **Mozilla Readability** - 官方 Firefox Reader View 使用的库
-- **无需后端** - 所有 API 都是公开免费的
-- **无需 API Key** - 完全免费使用
-- **支持跨域** - 使用 CORS 代理
+9 种精心设计的阅读主题：
 
-## 📡 使用的 API
-
-### 书籍
-- [Open Library API](https://openlibrary.org/developers/api) - 书籍搜索和详情
-- [Gutendex API](https://gutendex.com) - 公版书籍阅读
-
-### 新闻
-- [RSS2JSON](https://rss2json.com) - RSS 转 JSON
-- [Hacker News API](https://github.com/HackerNews/API) - 科技新闻
-
-### 知识
-- [Wikipedia API](https://www.mediawiki.org/wiki/API) - 维基百科搜索
-
-### 网页解析
-- [AllOrigins](https://allorigins.win) - CORS 代理
-- [Mozilla Readability](https://github.com/mozilla/readability) - Firefox Reader View 使用的内容提取库
-
-### 其他
-- [Quotable API](https://github.com/lukePeavey/quotable) - 每日名言
-
-## 🎯 核心功能
-
-### 🎨 多主题阅读系统
-9 种精心设计的阅读主题，适应不同场景：
 - 📄 **Medium 经典** - 纯净白色，专业阅读
 - 🌿 **护眼纸张** - 米黄背景，长时间阅读
 - 🌙 **深夜模式** - 真黑背景，夜间护眼
@@ -123,83 +115,25 @@ PureReader/
 - 🌌 **深空模式** - 深蓝渐变，沉浸体验
 - 🌅 **暖阳模式** - 温暖渐变，早晨阅读
 
-详见 [主题指南](THEMES.md)
+详见 [主题指南](docs/THEMES.md)
 
-### Mozilla Readability 集成
-使用 Firefox Reader View 同款技术：
-- 智能内容提取
-- 元数据解析（标题、作者、摘要、发布时间）
-- 内容评分算法
-- HTML 清理和格式化
-- 相对 URL 转绝对 URL
+## 🔧 技术栈
 
-### 阅读器功能
-- 字体大小调节（14px - 32px）
-- 行距调节（1.2 - 2.5）
-- 阅读进度条
-- 平滑滚动
-- 打印优化
+- **纯前端** - HTML + CSS + JavaScript
+- **Mozilla Readability** - Firefox Reader View 同款技术
+- **无需后端** - 所有 API 都是公开免费的
+- **无需 API Key** - 完全免费使用
+- **支持跨域** - 使用 CORS 代理
 
-## 🌟 设计理念
+## 📡 数据源
 
-### Medium 风格
-- Charter 衬线字体用于正文
-- 系统字体用于界面
-- 21px 字体，1.58 行距
-- 680px 最佳阅读宽度
-- 优雅的留白和间距
-
-### Readability 原则
-- 移除干扰元素
-- 保留核心内容
-- 优化排版
-- 提升可读性
-
-## 🔒 隐私和安全
-
-- **无数据收集** - 所有数据存储在本地
-- **无追踪** - 不使用任何分析工具
-- **开源** - 代码完全公开
-- **安全** - 移除所有脚本和事件处理器
-
-## 📝 使用限制
-
-### CORS 限制
-某些网站可能禁止跨域访问，导致网页解析失败。解决方案：
-1. 使用提供的 CORS 代理
-2. 直接在新标签页打开原网页
-3. 使用浏览器扩展禁用 CORS（仅开发环境）
-
-### API 限流
-免费 API 可能有请求限制：
-- RSS2JSON: 每小时 10,000 次
-- AllOrigins: 无明确限制
-- 其他 API: 通常无限制
-
-## 🛠️ 开发
-
-### 本地开发
-```bash
-# 克隆项目
-git clone https://github.com/your-username/purereader.git
-
-# 进入目录
-cd purereader
-
-# 使用任意 HTTP 服务器
-# 方式 1: Python
-python -m http.server 8000
-
-# 方式 2: Node.js
-npx serve
-
-# 访问 http://localhost:8000
-```
-
-### 自定义
-- 修改 `style.css` 调整样式
-- 修改 `script.js` 添加新功能
-- 修改 `readability-parser.js` 优化解析算法
+- [Open Library](https://openlibrary.org/) - 书籍搜索
+- [Gutendex](https://gutendex.com/) - 公版书籍
+- [RSS2JSON](https://rss2json.com/) - RSS 转换
+- [Hacker News API](https://github.com/HackerNews/API) - 科技新闻
+- [Wikipedia API](https://www.mediawiki.org/wiki/API) - 维基百科
+- [AllOrigins](https://allorigins.win/) - CORS 代理
+- [Quotable](https://github.com/lukePeavey/quotable) - 每日名言
 
 ## 🤝 贡献
 
@@ -212,12 +146,6 @@ npx serve
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 开启 Pull Request
 
-### 开发建议
-- 遵循现有代码风格
-- 添加必要的注释
-- 测试你的更改
-- 更新相关文档
-
 ## ⭐ Star History
 
 如果这个项目对你有帮助，请给它一个 Star ⭐
@@ -226,11 +154,11 @@ npx serve
 
 ## 📄 许可
 
-MIT License
+MIT License - 详见 [LICENSE](LICENSE)
 
 ## 🙏 致谢
 
-- [Mozilla Readability](https://github.com/mozilla/readability) - 内容提取灵感
+- [Mozilla Readability](https://github.com/mozilla/readability) - 内容提取技术
 - [Medium](https://medium.com) - 设计灵感
 - 所有提供免费 API 的服务
 

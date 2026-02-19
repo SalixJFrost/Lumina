@@ -1,8 +1,8 @@
 {
-  "name": "purereader",
+  "name": "lumina-reader",
   "version": "1.0.0",
-  "description": "纯前端在线阅读器 - Medium 风格 + Readability 技术",
-  "main": "script.js",
+  "description": "Lumina Reader - 纯前端多主题在线阅读器 | Medium 风格 + Readability 技术",
+  "main": "assets/js/script.js",
   "scripts": {
     "start": "npx serve",
     "dev": "npx serve -l 8000",
@@ -10,6 +10,7 @@
   },
   "keywords": [
     "reader",
+    "lumina",
     "readability",
     "medium",
     "ebook",
@@ -17,8 +18,13 @@
     "rss",
     "frontend"
   ],
-  "author": "",
+  "author": "SalixJFrost",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SalixJFrost/Lumina.git"
+  },
+  "homepage": "https://salixjfrost.github.io/Lumina/",
   "type": "commonjs",
   "dependencies": {
     "@mozilla/readability": "^0.6.0",
