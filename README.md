@@ -1,6 +1,20 @@
-# PureReader - 纯前端在线阅读器
+# 🌟 Lumina - 纯前端多主题在线阅读器
 
-一个基于 Medium 风格设计的纯前端阅读聚合平台，集成了 Mozilla Readability 技术，支持多种内容源。
+<div align="center">
+
+![Lumina Logo](https://img.shields.io/badge/Lumina-PureReader-1a8917?style=for-the-badge)
+[![GitHub Pages](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://salixjfrost.github.io/Lumina/)
+[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+
+**一个基于 Medium 风格设计的纯前端阅读聚合平台**
+
+集成 Mozilla Readability 技术 | 9 种精美主题 | 多源内容聚合
+
+[在线体验](https://salixjfrost.github.io/Lumina/) · [快速开始](QUICKSTART.md) · [主题指南](THEMES.md) · [功能特性](FEATURES.md)
+
+</div>
+
+---
 
 ## ✨ 特性
 
@@ -38,7 +52,10 @@
 
 ## 🚀 快速开始
 
-### 直接使用
+### 在线体验
+👉 **[立即访问 Lumina](https://salixjfrost.github.io/Lumina/)**
+
+### 本地运行
 1. 克隆或下载本项目
 2. 在浏览器中打开 `index.html`
 3. 开始阅读！
@@ -47,7 +64,9 @@
 1. Fork 本项目
 2. 在仓库设置中启用 GitHub Pages
 3. 选择 `main` 分支作为源
-4. 访问 `https://your-username.github.io/repository-name`
+4. 访问 `https://your-username.github.io/Lumina`
+
+详见 [部署指南](DEPLOY.md)
 
 ## 📦 项目结构
 
@@ -186,6 +205,25 @@ npx serve
 
 欢迎提交 Issue 和 Pull Request！
 
+### 贡献指南
+1. Fork 本项目
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
+
+### 开发建议
+- 遵循现有代码风格
+- 添加必要的注释
+- 测试你的更改
+- 更新相关文档
+
+## ⭐ Star History
+
+如果这个项目对你有帮助，请给它一个 Star ⭐
+
+[![Star History Chart](https://api.star-history.com/svg?repos=SalixJFrost/Lumina&type=Date)](https://star-history.com/#SalixJFrost/Lumina&Date)
+
 ## 📄 许可
 
 MIT License
@@ -196,10 +234,24 @@ MIT License
 - [Medium](https://medium.com) - 设计灵感
 - 所有提供免费 API 的服务
 
+## 📊 项目统计
+
+![GitHub stars](https://img.shields.io/github/stars/SalixJFrost/Lumina?style=social)
+![GitHub forks](https://img.shields.io/github/forks/SalixJFrost/Lumina?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/SalixJFrost/Lumina?style=social)
+
 ## 📮 联系
 
-如有问题或建议，欢迎提交 Issue。
+如有问题或建议，欢迎：
+- 提交 [Issue](https://github.com/SalixJFrost/Lumina/issues)
+- 发起 [Discussion](https://github.com/SalixJFrost/Lumina/discussions)
 
 ---
 
+<div align="center">
+
+**Made with ❤️ by [SalixJFrost](https://github.com/SalixJFrost)**
+
 **享受阅读！** 📖✨
+
+</div>
